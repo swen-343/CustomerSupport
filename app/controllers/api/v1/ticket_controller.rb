@@ -34,4 +34,15 @@ class Api::V1::TicketController < Api::V1::BaseController
 		
 		render(json: $ticket1)
 	end
+	
+	def assign_ticket
+		if params[:ticketNum] != "1"
+			return api_error(status: 404, errors: 'Not found')
+		end
+		
+		$ticket1[:assignedTo] = params[:assignedTo]
+		
+		render(json: $ticket1)
+	end
+
 end
