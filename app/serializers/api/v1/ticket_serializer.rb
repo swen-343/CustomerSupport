@@ -1,5 +1,5 @@
 class Api::V1::TicketSerializer < Api::V1::BaseSerializer
-    attributes :createdBy, :ticketNum, :phoneSerial, :transactionId, :status, :assignedTo, :dateCreated, :dateClosed
+    attributes :ticketNum, :createdBy, :phoneSerial, :transactionId, :status, :assignedTo, :dateCreated, :dateClosed
 
     has_many :labels
 
