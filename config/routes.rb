@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :customers
     namespace :api do
         namespace :v1 do
 			get '/ticket/:ticketNum/phones', to: 'ticket#get_phones_from_ticket', format: false
