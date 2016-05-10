@@ -1,0 +1,26 @@
+
+<section class="customerpage">
+	<div class = "search">
+		<div class="search_input">
+			<input type="text" ng-model="query" placeholder="Search customers..." autofocus>
+		</div>
+		<a class="search_add" ng-click="index.addCustomer()"> <button>ADD NEW CUSTOMER</button></a>
+	</div>
+	<ul class=contactlist>
+		<li ng-repeat="customer in index.customers">
+			<a ng-click="list.editCustomer(customers.indexOf(customer))">
+				<div class = "info">
+					<table>
+						<tr>
+							<td></td>
+							<td style="padding-left:10px,"><h2 style="margin-bottom:1em">{{customer.name}}</h2>
+								<h3 class="table"><object class="table-cell" type="image/svg+xml" width="15px" height="15px" data="images/phone.svg"></object><span class="table-cell">&nbsp; {{customer.phone}}</span></h3>
+								<h3 class="table"><object class="table-cell" type="image/svg+xml" width="15px" height="15px" data="images/email.svg"></object><span class="table-cell">&nbsp; {{customer.email}}</span></h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>

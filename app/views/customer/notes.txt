@@ -1,0 +1,6 @@
+When I’m creating a new ticket, I need to be able to select a customer somehow
+If the customer doesn’t exist, I need to create it
+and input all of the data
+(doesn’t need to be multiple pages)
+Show all tickets
+Need a button to send a label
