@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= button_to 'Logout', logout_path(@login), :method => :delete %>
+
 <%= yield %>
 
 </body>
