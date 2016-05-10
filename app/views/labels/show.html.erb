@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket:</strong>
+
+  <%= link_to @label.ticket.id, ticket_path(@label.ticket) %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= link_to @label.customer.name, customer_path(@label.customer) %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @label.address %>
+</p>
+
+<%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Back', labels_path %>

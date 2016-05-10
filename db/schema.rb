@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20160510050732) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "labels", force: :cascade do |t|
+    t.integer  "ticket_id"
+    t.integer  "customer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "address"
+  end
+
+  add_index "labels", ["customer_id"], name: "index_labels_on_customer_id"
+  add_index "labels", ["ticket_id"], name: "index_labels_on_ticket_id"
+
   create_table "statuses", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
