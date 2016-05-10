@@ -14,7 +14,12 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    @ticket = Ticket.new
+    if @customer = Customer.find_by_id(new_ticket_params[:customer_id])
+      @ticket = Ticket.new(customer: @customer)
+    else
+      @ticket = Ticket.new
+      @ticket.build_customer
+    end
   end
 
   # GET /tickets/1/edit
@@ -69,6 +74,10 @@ class TicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit(:status_id, :customer_id, :closed_at)
+      params.require(:ticket).permit(:status_id, customer_attributes: [:name, :phone, :email])
+    end
+
+    def new_ticket_params
+      params.permit(:customer_id)
     end
 end

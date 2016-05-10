@@ -15,5 +15,12 @@
   <%= @customer.email %>
 </p>
 
+<!--tickets-->
+
+<p>
+  <strong>Create new ticket</strong>
+  <%= link_to 'Create new Ticket', new_ticket_customer_path(@customer), :method => :get %>
+</p>
+
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Back', :back %>
