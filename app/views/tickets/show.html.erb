@@ -15,5 +15,19 @@
   <%= @ticket.closed_at %>
 </p>
 
+<p>
+  <% unless @labels.empty? %>
+      <p>Labels:</p>
+  <% end %>
+  <% @labels.each do |label| %>
+    <ul><%= link_to "#{label.customer.name} #{label.id}", label_path(label) %></ul>
+  <% end %>
+</p>
+
+<p>
+  <strong>Create new ticket</strong>
+  <%= link_to 'Create new Label', new_ticket_label_path(@ticket), :method => :get %>
+</p>
+
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>
